@@ -20,7 +20,45 @@
       "ports": ["5000/tcp"],
       "volumes": [
         {
+          "container": "/etc/localtime",
+          "bind": "/etc/localtime"
+        },
+        {
+          "container": "/etc/timezone",
+          "bind": "/etc/timezone"
+        },
+        {
           "container": "/var/lib/registry"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": 1,
+      "title": "PhpMyAdmin",
+      "description": "A web interface for MySQL and MariaDB",
+      "categories": ["management"],
+      "platform": "linux",
+      "image": "phpmyadmin:latest",
+      "env": [
+        {
+          "name": "PMA_HOSTS",
+          "default": "172.17.0.1"
+        },
+        {
+          "name": "PMA_PORT",
+          "default": "3306"
+        }
+      ],
+      "ports": ["80/tcp"],
+      "volumes": [
+        {
+          "container": "/etc/localtime",
+          "bind": "/etc/localtime"
+        },
+        {
+          "container": "/etc/timezone",
+          "bind": "/etc/timezone"
         }
       ]
     }
