@@ -17,11 +17,7 @@
           "preset": true
         }
       ],
-      "ports": [{
-        "protocol": "tcp",
-        "container": "5000",
-        "host": "5000"
-      }],
+      "ports": ["5000/tcp"],
       "volumes": [
         {
           "container": "/var/lib/registry"
