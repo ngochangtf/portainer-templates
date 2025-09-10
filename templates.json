@@ -10,11 +10,17 @@
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
       "image": "registry:latest",
+      "env": [
+        {
+          "name": "OTEL_TRACES_EXPORTER",
+          "default": "none",
+          "preset": false
+        }
+      ],
       "ports": ["5000/tcp"],
       "volumes": [
         {
-          "container": "/var/lib/registry",
-          "volume": "registry_storage"
+          "container": "/var/lib/registry"
         }
       ]
     }
