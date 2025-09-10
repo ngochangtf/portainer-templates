@@ -14,10 +14,14 @@
         {
           "name": "OTEL_TRACES_EXPORTER",
           "default": "none",
-          "preset": false
+          "preset": true
         }
       ],
-      "ports": ["5000/tcp"],
+      "ports": [{
+        "protocol": "tcp",
+        "container": "5000",
+        "host": "5000"
+      }],
       "volumes": [
         {
           "container": "/var/lib/registry"
