@@ -8,7 +8,7 @@
       "description": "Docker image registry",
       "categories": ["docker"],
       "platform": "linux",
-      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+      "logo": "https://ngochangtf.github.io/portainer-templates/assets/registry.png",
       "image": "registry:latest",
       "env": [
         {
@@ -39,6 +39,7 @@
       "description": "A web interface for MySQL and MariaDB",
       "categories": ["management"],
       "platform": "linux",
+      "logo": "https://ngochangtf.github.io/portainer-templates/assets/phpmyadmin.png",
       "image": "phpmyadmin:latest",
       "env": [
         {
