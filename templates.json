@@ -62,6 +62,45 @@
           "bind": "/etc/timezone"
         }
       ]
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "title": "Redis Insight",
+      "description": "Redis Insight - our best official GUI for Redis",
+      "categories": ["management"],
+      "platform": "linux",
+      "logo": "https://ngochangtf.github.io/portainer-templates/assets/redisinsight.png",
+      "image": "redis/redisinsight:latest",
+      "env": [
+        {
+          "name": "RI_REDIS_HOST",
+          "default": "172.17.0.1"
+        },
+        {
+          "name": "RI_REDIS_PORT",
+          "default": "6379"
+        },
+        {
+          "name": "RI_REDIS_USERNAME",
+          "default": "default"
+        },
+        {
+          "name": "RI_REDIS_PASSWORD",
+          "default": ""
+        }
+      ],
+      "ports": ["5540/tcp"],
+      "volumes": [
+        {
+          "container": "/etc/localtime",
+          "bind": "/etc/localtime"
+        },
+        {
+          "container": "/etc/timezone",
+          "bind": "/etc/timezone"
+        }
+      ]
     }
   ]
 }
