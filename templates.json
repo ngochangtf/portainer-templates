@@ -185,6 +185,11 @@
           "default": ""
         },
         {
+          "name": "WORDPRESS_DB_NAME",
+          "label": "Database Name",
+          "default": "wordpress"
+        },
+        {
           "name": "WORDPRESS_TABLE_PREFIX",
           "label": "Table Prefix",
           "default": "wp_"
