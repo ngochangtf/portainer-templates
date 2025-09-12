@@ -44,10 +44,12 @@
       "env": [
         {
           "name": "PMA_HOSTS",
+          "label": "Database Host",
           "default": "172.17.0.1"
         },
         {
           "name": "PMA_PORT",
+          "label": "Database Port",
           "default": "3306"
         }
       ],
@@ -75,18 +77,22 @@
       "env": [
         {
           "name": "RI_REDIS_HOST",
+          "label": "Redis Host",
           "default": "172.17.0.1"
         },
         {
           "name": "RI_REDIS_PORT",
+          "label": "Redis Port",
           "default": "6379"
         },
         {
           "name": "RI_REDIS_USERNAME",
+          "label": "Redis Username",
           "default": "default"
         },
         {
           "name": "RI_REDIS_PASSWORD",
+          "label": "Redis Password",
           "default": ""
         }
       ],
@@ -149,7 +155,53 @@
           "bind": "/etc/timezone"
         },
         {
-          "container": "/usr/local/apache2/htdocs/"
+          "container": "/usr/local/apache2/htdocs"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": 1,
+      "title": "WordPress",
+      "description": "The WordPress rich content management system can utilize plugins, widgets, and themes",
+      "categories": ["cms"],
+      "platform": "linux",
+      "logo": "https://ngochangtf.github.io/portainer-templates/assets/wordpress.png",
+      "image": "wordpress:latest",
+      "env": [
+        {
+          "name": "WORDPRESS_DB_HOST",
+          "label": "Database Host",
+          "default": "172.17.0.1"
+        },
+        {
+          "name": "WORDPRESS_DB_USER",
+          "label": "Database User",
+          "default": "root"
+        },
+        {
+          "name": "WORDPRESS_DB_PASSWORD",
+          "label": "Database Password",
+          "default": ""
+        },
+        {
+          "name": "WORDPRESS_TABLE_PREFIX",
+          "label": "Table Prefix",
+          "default": "wp_"
+        }
+      ],
+      "ports": ["80/tcp"],
+      "volumes": [
+        {
+          "container": "/etc/localtime",
+          "bind": "/etc/localtime"
+        },
+        {
+          "container": "/etc/timezone",
+          "bind": "/etc/timezone"
+        },
+        {
+          "container": "/var/www/html"
         }
       ]
     }
